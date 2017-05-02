@@ -1,0 +1,11 @@
+﻿@model Sitecore.Mvc.Presentation.RenderingModel
+
+<div data-context="@Model.PageItem.ID.ToString()">
+    <div id="news-container">
+        @*lazy-loaded news container*@
+    </div>
+
+    <input type="text" id="news-title" />
+    <input type="text" id="news-content" />
+    <input type="button" id="news-add" value="Add News" />
+</div>

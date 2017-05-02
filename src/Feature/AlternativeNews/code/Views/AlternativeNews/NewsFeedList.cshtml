@@ -1,0 +1,11 @@
+﻿@model IEnumerable<Sitecore.Feature.AlternativeNews.Models.NewsItem>
+
+@foreach (var item in Model)
+{
+    <div class="news-item">
+        <h2>@item.Title</h2>
+        <p>
+            @item.Content
+        </p>
+    </div>
+}

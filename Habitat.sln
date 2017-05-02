@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.SitecoreExtensions", "src\foundation\SitecoreExtensions\code\Sitecore.Foundation.SitecoreExtensions.csproj", "{B535703F-8D07-4F23-A533-2974BB4CC7B1}"
 EndProject
@@ -199,6 +199,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.DependencyInjection", "src\Foundation\DependencyInjection\code\Sitecore.Foundation.DependencyInjection.csproj", "{366148B7-2392-4F42-80D6-786B7A3682AE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DependencyInjection", "DependencyInjection", "{86FB273F-3637-45AF-825D-CFEFE1F7A8EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.AlternativeNews", "src\Feature\AlternativeNews\code\Sitecore.Feature.AlternativeNews.csproj", "{09EB3193-C1FE-4BC4-9AB8-03DBF12D8BA7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AlternativeNews", "AlternativeNews", "{3BCC317E-058E-4B42-B42B-39689BDD9AC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.AlternativeNews.Tests", "src\Feature\AlternativeNews\Tests\Sitecore.Feature.AlternativeNews.Tests.csproj", "{27059805-6294-488C-94E9-78335E5B490B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -616,6 +622,22 @@ Global
 		{366148B7-2392-4F42-80D6-786B7A3682AE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{366148B7-2392-4F42-80D6-786B7A3682AE}.Release|x64.ActiveCfg = Release|Any CPU
 		{366148B7-2392-4F42-80D6-786B7A3682AE}.Release|x64.Build.0 = Release|Any CPU
+		{09EB3193-C1FE-4BC4-9AB8-03DBF12D8BA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09EB3193-C1FE-4BC4-9AB8-03DBF12D8BA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09EB3193-C1FE-4BC4-9AB8-03DBF12D8BA7}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{09EB3193-C1FE-4BC4-9AB8-03DBF12D8BA7}.Debug|x64.Build.0 = Debug|Any CPU
+		{09EB3193-C1FE-4BC4-9AB8-03DBF12D8BA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09EB3193-C1FE-4BC4-9AB8-03DBF12D8BA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09EB3193-C1FE-4BC4-9AB8-03DBF12D8BA7}.Release|x64.ActiveCfg = Release|Any CPU
+		{09EB3193-C1FE-4BC4-9AB8-03DBF12D8BA7}.Release|x64.Build.0 = Release|Any CPU
+		{27059805-6294-488C-94E9-78335E5B490B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27059805-6294-488C-94E9-78335E5B490B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27059805-6294-488C-94E9-78335E5B490B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{27059805-6294-488C-94E9-78335E5B490B}.Debug|x64.Build.0 = Debug|Any CPU
+		{27059805-6294-488C-94E9-78335E5B490B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27059805-6294-488C-94E9-78335E5B490B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27059805-6294-488C-94E9-78335E5B490B}.Release|x64.ActiveCfg = Release|Any CPU
+		{27059805-6294-488C-94E9-78335E5B490B}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -708,5 +730,8 @@ Global
 		{7CC3D72B-4518-4B78-BE48-630A263C0F5B} = {1B850A0C-6B4F-4189-89F3-7A16E9592291}
 		{366148B7-2392-4F42-80D6-786B7A3682AE} = {86FB273F-3637-45AF-825D-CFEFE1F7A8EA}
 		{86FB273F-3637-45AF-825D-CFEFE1F7A8EA} = {D2CBE02E-6AA7-4343-9A01-891F971A17F5}
+		{09EB3193-C1FE-4BC4-9AB8-03DBF12D8BA7} = {3BCC317E-058E-4B42-B42B-39689BDD9AC5}
+		{3BCC317E-058E-4B42-B42B-39689BDD9AC5} = {755F9E42-1707-4E1A-AE6D-3FD8A25118C0}
+		{27059805-6294-488C-94E9-78335E5B490B} = {3BCC317E-058E-4B42-B42B-39689BDD9AC5}
 	EndGlobalSection
 EndGlobal
