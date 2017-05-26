@@ -1,0 +1,14 @@
+﻿---
+ID: "d7a3c445-a9fd-4997-9916-e7c1fe86441f"
+Parent: "3ebec263-b57e-4a3c-a232-7c70519f9908"
+Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
+Path: /sitecore/system/Tasks/Commands/Habitat
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170513T074629Z

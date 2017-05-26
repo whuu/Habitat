@@ -1,0 +1,14 @@
+﻿---
+ID: "998f2f50-5dc8-443e-98a9-f1629360b19e"
+Parent: "feba53d5-7c68-4552-b588-3518508972c2"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
+Path: /sitecore/templates/Feature/Products/_Product/Imported Data
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170513T080901Z

@@ -1,0 +1,19 @@
+﻿---
+ID: "92c9de50-75f8-46a1-b082-985a74034280"
+Parent: "4b67a7f9-7246-4a59-a051-961095c2dc70"
+Template: "c72089dd-0991-4f32-805e-4c06531ebfb3"
+Path: /sitecore/content/Habitat/Global/Product Repository
+DB: master
+SharedFields:
+- ID: "dec8d2d5-e3cf-48b6-a653-8e69e2716641"
+  Hint: __Security
+  Value: |
+    ar|sitecore\Author|pd|+item:read|+item:write|
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170513T081926Z

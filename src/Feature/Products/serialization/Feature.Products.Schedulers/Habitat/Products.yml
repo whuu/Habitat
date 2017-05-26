@@ -1,0 +1,14 @@
+﻿---
+ID: "4b364253-563b-4c3a-a9e2-c168bbc8ca9c"
+Parent: "fbfc41dd-7fc6-44ae-98ae-fe38105c1b40"
+Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
+Path: /sitecore/system/Tasks/Schedules/Habitat/Products
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170513T074514Z
