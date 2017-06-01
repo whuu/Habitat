@@ -18,6 +18,9 @@
 
                 public static readonly ID Timestamp = new ID("{1F21047D-8545-4BC4-9F48-AC215B8D6B73}");
                 public const string Timestamp_FieldName = "Timestamp";
+
+                public static readonly ID Active = new ID("{F12A1ECD-1D8C-47A9-8C2F-BE507B32D2C9}");
+                public const string Active_FieldName = "Active";
             }
         }
     }

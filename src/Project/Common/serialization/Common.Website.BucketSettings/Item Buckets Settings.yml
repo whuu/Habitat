@@ -28,6 +28,27 @@ Languages:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20111026T193900Z
+    - ID: "4b5d1cb7-e617-4cd0-a7e8-cc8a9fd80688"
+      Hint: Rule
+      Type: Rules
+      Value: |
+        <ruleset>
+          <rule
+            uid="{9F0580DF-9AED-49EE-9CA8-E3913DAA4E60}"
+            name="Product Rule">
+            <conditions>
+              <condition
+                id="{4A505FF0-50A8-4B84-84CF-0CAD8EF3D695}"
+                uid="CF0153A77A764109BD0EF519ABA845A2"
+                templateid="{6ABD63AA-668E-4479-91CD-9037448CD754}" />
+            </conditions>
+            <actions>
+              <action
+                id="{FF1F2DC7-7291-4A08-9B03-8B7A968AE836}"
+                uid="3B8CD220F30D4F14B54AA277A1FC3F1C" />
+            </actions>
+          </rule>
+        </ruleset>
 - Language: "ja-JP"
   Fields:
   - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"

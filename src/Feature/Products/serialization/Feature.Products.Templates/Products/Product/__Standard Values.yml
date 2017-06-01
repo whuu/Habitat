@@ -4,6 +4,19 @@ Parent: "6abd63aa-668e-4479-91cd-9037448cd754"
 Template: "6abd63aa-668e-4479-91cd-9037448cd754"
 Path: /sitecore/templates/Feature/Products/Product/__Standard Values
 DB: master
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Type: TreelistEx
+  Value: "{B318E68B-16BB-4008-B9F6-CC5A01686878}"
+- ID: "c9283d9e-7c29-4419-9c28-5a5c8ff53e84"
+  Hint: __Bucketable
+  Type: Checkbox
+  Value: 1
+- ID: "f7b94d8c-a842-49f8-ab7a-2169d00426b0"
+  Hint: __Should Not Organize In Bucket
+  Type: Checkbox
+  Value: 1
 Languages:
 - Language: en
   Versions:

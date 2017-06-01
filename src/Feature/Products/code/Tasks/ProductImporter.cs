@@ -10,9 +10,12 @@
     using Sitecore.Tasks;
     using ContentSearch;
     using ContentSearch.Maintenance;
+    using ContentSearch.SearchTypes;
+    using ContentSearch.Linq.Utilities;
     using Services;
     using Models;
     using Data.Fields;
+    using Buckets.Managers;
 
     public class ProductImporter
     {
@@ -33,7 +36,7 @@
             } 
         }
 
-        public void RunImporter()
+        protected void RunImporter()
         {
             var watch = System.Diagnostics.Stopwatch.StartNew();
             var repositoryRoot = Context.Item;
@@ -42,7 +45,7 @@
 
             try
             {
-                var existingProducts = repositoryRoot.Axes.GetDescendants().Where(i => i.TemplateID == Templates.Product.ID);
+                var existingProducts = SearchBucket(repositoryRoot, Templates.Product.ID);
                 var productService = new ProductSerice();
                 var importedProducts = productService.GetAll();
             
@@ -67,17 +70,22 @@
             finally
             {
                 IndexCustodian.ResumeIndexing();
-                foreach (var index in ContentSearchManager.Indexes.Where(x => x.Name.Contains("master")))
+                if (changedItems.Any())
                 {
-                    var changes = changedItems.Select(change => new SitecoreItemUniqueId(change.Uri));
-                    IndexCustodian.IncrementalUpdate(index, changes);
+                    SyncBucket(repositoryRoot);
+
+                    foreach (var index in ContentSearchManager.Indexes.Where(x => x.Name.Contains("master")))
+                    {
+                        var changes = changedItems.Select(change => new SitecoreItemUniqueId(change.Uri));
+                        IndexCustodian.IncrementalUpdate(index, changes);
+                    }
                 }
                 watch.Stop();
                 Log.Info($"Product importer completed, took {watch.ElapsedMilliseconds}  ms", this);
             }
         }
 
-        public void Map(ImportedProduct newProduct, ref Item sitecoreProduct, Item repositoryRoot)
+        protected void Map(ImportedProduct newProduct, ref Item sitecoreProduct, Item repositoryRoot)
         {
             using (new SecurityDisabler())
             {
@@ -94,6 +102,7 @@
                     sitecoreProduct[Templates.Product.Fields.Code] = newProduct.Code;
                     sitecoreProduct[Templates.Product.Fields.InternalName] = newProduct.Name;
                     sitecoreProduct[Templates.Product.Fields.Timestamp] = DateUtil.ToIsoDate(newProduct.Timestamp);
+                    ((CheckboxField)sitecoreProduct.Fields[Templates.Product.Fields.Active]).Checked = newProduct.Active;
                     sitecoreProduct.Appearance.DisplayName = $"{newProduct.Code} - {newProduct.Name}";
                     sitecoreProduct.Editing.EndEdit();
                 }catch (Exception ex)
@@ -101,6 +110,29 @@
                     sitecoreProduct.Editing.CancelEdit();
                     throw ex;
                 }
+            }
+        }
+
+        private void SyncBucket(Item item)
+        {
+            if (item != null && BucketManager.IsBucket(item))
+            {
+                BucketManager.Sync(item);
+            }
+        }
+
+        private List<Item> SearchBucket(Item bucketRootItem, ID templateID)
+        {
+            if (bucketRootItem == null || !BucketManager.IsBucket(bucketRootItem))
+                return null;
+
+            var indexableItem = new SitecoreIndexableItem(bucketRootItem);
+            using (var searchContext = ContentSearchManager.GetIndex(indexableItem).CreateSearchContext())
+            {
+                var predicate = PredicateBuilder.Create<SearchResultItem>(
+                    i => i.TemplateId == templateID && i.Path.StartsWith(bucketRootItem.Paths.Path));
+                var queryable = searchContext.GetQueryable<SearchResultItem>().Where(predicate);
+                return queryable.Select(i => i.GetItem()).ToList();
             }
         }
     }

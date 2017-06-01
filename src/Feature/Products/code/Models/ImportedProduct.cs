@@ -12,5 +12,7 @@ namespace Sitecore.Feature.Products.Models
         public string Name { get; set; }
         
         public DateTime Timestamp { get; set; } 
+
+        public bool Active { get; set; }
     }
 }

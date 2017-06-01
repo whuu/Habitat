@@ -63,6 +63,9 @@
       <HintPath>..\..\..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Sitecore.Buckets">
+      <HintPath>..\..\..\..\packages\Sitecore.Buckets.NoReferences.8.2.161115\lib\NET452\Sitecore.Buckets.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.ContentSearch, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\packages\Sitecore.ContentSearch.NoReferences.8.2.161115\lib\NET452\Sitecore.ContentSearch.dll</HintPath>
       <Private>True</Private>
@@ -120,8 +123,12 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Config\Include\Feature\Feature.Product.Serialization.config" />
-    <Content Include="packages.config" />
+    <Content Include="App_Config\Include\Feature\Feature.Product.Serialization.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -135,6 +142,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\ImportedProduct.cs" />
+    <Compile Include="Rules\ProductBucketRule.cs" />
     <Compile Include="Tasks\ProductImporter.cs" />
     <Compile Include="Services\IProductService.cs" />
     <Compile Include="Services\ProductService.cs" />
