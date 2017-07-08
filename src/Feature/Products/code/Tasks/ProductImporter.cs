@@ -69,11 +69,14 @@
             }
             finally
             {
-                IndexCustodian.ResumeIndexing();
                 if (changedItems.Any())
                 {
                     SyncBucket(repositoryRoot);
+                }
 
+                IndexCustodian.ResumeIndexing();
+                if (changedItems.Any())
+                {
                     foreach (var index in ContentSearchManager.Indexes.Where(x => x.Name.Contains("master")))
                     {
                         var changes = changedItems.Select(change => new SitecoreItemUniqueId(change.Uri));
